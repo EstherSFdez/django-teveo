@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <main class="content">
+    <h1 class="camera-title">{{ camera.name }}</h1>
+    <img class="fixed-size-camera-image camera-page" src="{{ camera.image_url }}" alt="Camera image">
+    <br> <!-- Línea nueva para agregar un salto de línea -->
+    <a href="{% url 'comment_page' camera.identifier %}" class="btn btn-primary comment-btn common-btn" style="margin-top: 10px;">Escribir un comentario</a>
+    <a href="{% url 'vote_camera' camera.identifier %}" class="btn btn-primary vote-button common-btn" style="margin-top: 10px;">Me gusta</a>
+    <h2 style="color: white; font-weight: bold; font-size: larger; margin-top: 20px;">Comentarios de esta cámara:</h2> <!-- Línea nueva -->
+    {% for comment in comments %}
+      <div>
+        <p style="color: white;">{{ comment.timestamp }}</p>
+        <p style="color: white;">{{ comment.nombre }}: {{ comment.text }}</p> <!-- Línea modificada -->
+      </div>
+    {% endfor %}
+  </main> <!-- Línea modificada -->
+{% endblock %}

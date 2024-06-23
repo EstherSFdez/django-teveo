@@ -1,0 +1,215 @@
+.navbar {
+    background-color: #800000; /* Código de color granate */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    font-family: Arial, sans-serif; /* Fuente Arial */
+    font-weight: bold; /* Letras gorditas */
+    color: black !important; /* Color negro */
+}
+
+:root {
+    --font-size: medium; /* Valor por defecto */
+    --font-family: Arial, sans-serif; /* Valor por defecto */
+}
+
+body {
+    background-color: #2b2b2b; /* Código de color gris oscuro */
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+main {
+    margin-top: 60px; /* Ajusta este valor a la cantidad de separación que desees */
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+.config-content p {
+    color: white !important;
+}
+
+.config-title {
+    color: white;
+    font-weight: bold;
+}
+
+.help-title {
+    color: white;
+    font-weight: bold;
+}
+
+.help-content {
+    color: white;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+a.identifier {
+    background-color: #800000; /* Fondo granate */
+    color: black !important; /* Color de texto negro */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espacio interior del botón */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    display: inline-block; /* Permite aplicar propiedades de caja */
+    margin-bottom: 20px; /* Ajusta este valor a la cantidad de separación que desees */
+    font-weight: bold; /* Esto hará que el texto sea más grueso */
+}
+
+.comment {
+    margin-bottom: 50px; /* Ajusta este valor a la cantidad de separación que desees */
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+img.camera-image {
+    border: 8px solid black; /* Borde negro de 3px */
+    width: 50%; /* Ajusta el ancho al 50% del ancho disponible */
+    height: auto; /* La altura se ajustará automáticamente para mantener las proporciones de la imagen */
+    object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin distorsionarse */
+}
+
+.main-content {
+    max-width: 1200px; /* Ajusta este valor al ancho máximo que desees para el contenido */
+    padding: 20px 20px 20px 0px; /* Añade un poco de espacio alrededor del contenido */
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+.comment p {
+    color: white;
+}
+
+.commenter-name {
+    color: white; /* Color de texto blanco */
+    font-weight: bold; /* Letra gordita */
+    font-size: 1.2em; /* Tamaño de letra un poco más grande */
+    margin-top: 20px; /* Añade un margen en la parte superior */
+    margin-left: 20px;
+}
+
+.random-camera {
+    position: absolute;
+    top: 60px;
+    right: 5px;
+}
+
+.random-camera-text {
+    color: white; /* Color de texto blanco */
+    margin-top: 20px;
+}
+
+.random-camera img {
+    width: 500px; /* Ajusta este valor al ancho que desees */
+    height: 300px; /* Ajusta este valor a la altura que desees */
+    object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin distorsionarse */
+    margin-right: 80px; /* Añade un margen en la parte derecha */
+}
+
+.camera-image {
+    width: 50%; /* Ajusta el ancho de la imagen al 50% del ancho disponible */
+    height: auto; /* La altura se ajustará automáticamente para mantener las proporciones de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+}
+
+.titulo-datos {
+    color: white; /* Cambia el color del texto a blanco */
+    font-weight: bold; /* Hace que el texto sea en negrita */
+}
+
+.boton-descarga {
+    background-color: #800000; /* Cambia el color de fondo del botón a granate */
+    color: black; /* Cambia el color del texto a negro */
+    font-weight: bold; /* Hace que el texto sea en negrita */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 0; /* Hace que el botón sea cuadrado */
+    padding: 10px; /* Añade un poco de espacio alrededor del texto dentro del botón */
+    margin-top: 10px; /* Añade un poco de espacio entre el botón y el texto de arriba */
+    width: 250px;
+}
+
+.descarga-lista li {
+    list-style: none; /* Elimina las viñetas de la lista */
+}
+
+.paginacion {
+    color: white; /* Cambia el color del texto a blanco */
+    font-weight: bold; /* Hace que el texto sea en negrita */
+}
+
+.boton-camara {
+    background-color: #800000; /* Cambia el color de fondo del botón a granate */
+    color: white; /* Cambia el color del texto a blanco */
+    font-weight: bold; /* Hace que el texto sea en negrita */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 12px; /* Hace que el botón sea redondeado */
+    padding: 10px; /* Añade un poco de espacio alrededor del texto dentro del botón */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    display: inline-block; /* Permite aplicar propiedades de caja */
+    margin-top: 10px; /* Añade un poco de espacio entre el botón y el texto de arriba */
+}
+
+footer {
+    color: white;
+    margin-left: 20px;
+}
+
+.main-title {
+    color: white;
+    font-weight: bold;
+}
+
+.fixed-size-camera-image {
+    width: 600px; /* Ajusta este valor al ancho que desees */
+    height: 400px; /* Ajusta este valor a la altura que desees */
+    object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin distorsionarse */
+}
+
+.comment-page main {
+    color: white; /* Todo el texto dentro de <main> en la página de comentarios será blanco */
+}
+
+.comment-page img.fixed-size-camera-image {
+    border: 8px solid black; /* Borde negro de 8px para la imagen de la cámara */
+}
+
+.paginacion {
+    color: white; /* Cambia el color del texto a blanco */
+    font-weight: bold; /* Hace que el texto sea en negrita */
+}
+
+.camera-title {
+    color: white; /* Color de texto blanco */
+    font-weight: bold; /* Letra gordita */
+    font-size: 1.5em; /* Tamaño de letra un poco más grande */
+}
+
+.pagination-link {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.comment-page {
+    color: white;
+}
+
+.fixed-size-camera-image, .camera-page img.fixed-size-camera-image {
+    border: 8px solid black; !important
+}
+
+.vote-button {
+    background-color: darkblue !important; /* Color de fondo azul oscuro */
+}
+
+.common-btn {
+    color: white; /* Cambia el color del texto a blanco */
+    font-weight: bold; /* Hace que el texto sea en negrita */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 12px; /* Hace que el botón sea redondeado */
+    padding: 10px; /* Añade un poco de espacio alrededor del texto dentro del botón */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    display: inline-block; /* Permite aplicar propiedades de caja */
+    margin-top: 10px; /* Añade un poco de espacio entre el botón y el texto de arriba */
+}
+
+

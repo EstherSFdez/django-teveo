@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <main class="content comment-page"> <!-- Añade la clase 'comment-page' aquí -->
+    <h1 class="camera-title"> Comentar en {{ camera.name }}</h1>
+    <img class="fixed-size-camera-image" src="{{ camera.image_url }}" alt="Camera image">
+    <p>Fecha y hora: {{ current_time }}</p> <!-- Línea nueva -->
+    <form method="post">
+      {% csrf_token %}
+      <p>Comenta aquí:</p>
+      <textarea name="text" rows="4" cols="50">{{ form.text.value|default_if_none:'' }}</textarea>
+<input type="submit" value="Enviar Comentario" class="btn btn-primary comment-btn" style="margin-top: -20px;">
+    </form>
+  </main>
+{% endblock %}

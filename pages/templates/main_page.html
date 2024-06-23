@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <main class="content main-content">
+        <p class="main-title titulo-datos">Cámaras:</p> <!-- Añade la clase 'titulo-datos' aquí -->
+        {% for comment in page_obj %}
+            <div class="comment">
+                <a class="identifier" href="{% url 'camera_page' comment.camera.identifier %}">Identificador {{ comment.camera.identifier }}</a>
+                <p>{{ comment.timestamp }}</p>
+                <p>{{ comment.nombre }}: {{ comment.text }}</p>  <!-- Línea modificada -->
+                {% if comment.image_url %}
+                    <img class="camera-image" src="{{ comment.image_url }}" alt="Comment Image">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        {% if page_obj.has_previous %}
+            <a class="paginacion" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+            <a class="paginacion" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+        {% endif %}
+    </main>
+{% endblock %}

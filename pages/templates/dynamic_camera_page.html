@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <main style="color: white;">
+        <!-- El contenido específico de cada página irá aquí -->
+        <a href="{% url 'camera_page' camera.identifier %}" class="btn boton-camara" style="margin-top: 20px; margin-bottom: 20px;">Ver Cámara</a>
+        <h1 class="camera-title">{{ camera.name }}</h1>
+        <p>{{ camera.location }}</p>
+        <div class="dynamic-camera-page">
+            <img class="fixed-size-camera-image" src="{{ camera.image_url }}" alt="Camera image" id="camera-image" hx-get="{% url 'camera_json' camera.identifier %}" hx-trigger="every 10s">
+        </div>
+        <br>
+        <a href="{% url 'comment_page' camera.identifier %}" class="btn btn-primary comment-btn common-btn" style="margin-top: 5px;">Escribir un comentario</a>
+        <a href="{% url 'vote_camera' camera.identifier %}" class="btn btn-primary vote-button common-btn" style="margin-top: 5px;">Me gusta</a>
+        <h2 style="color: white; font-weight: bold; font-size: larger; margin-top: 20px;">Comentarios de esta cámara:</h2>
+        <div id="comments">
+            {% for comment in comments %}
+                <div>
+                    <p>{{ comment.timestamp }}</p>
+                    <p>{{ comment.nombre }}: {{ comment.text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    <script>
+        setTimeout(function(){
+           location.reload();
+        }, 10000);
+    </script>
+{% endblock %}

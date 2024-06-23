@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TeVeo</title>
+    <link rel="icon" href="{% static 'favicon.png' %}" type="image/png">
+    <style>
+        :root {
+            --font-size: {{ font_size }};
+            --font-family: {{ font_family }};
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'custom.css' %}">
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'main_page' %}">
+                    <img src="{% static 'favicon.png' %}" alt="TeVeo logo" width="30" height="30">
+                    TeVeo
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'main_page' %}">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'cameras_page' %}">Cámaras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'config_page' %}">Configuración</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'help_page' %}">Ayuda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+                        </li>
+                    </ul>
+                    <!-- Agrega tu enlace de cierre de sesión aquí -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="random-camera">
+            {% if random_camera %}
+                <p class="random-camera-text">Ejemplo cámara aleatoria: </p> <!-- Agrega la clase 'random-camera-text' aquí -->
+                <img class="camera-image" src="{{ random_camera.image_url }}" alt="Imagen de cámara aleatoria">
+            {% endif %}
+        </div>
+        <p class="commenter-name">Comentador: {{ commenter_name }}</p>
+    </header>
+    <main style="margin-left: 20px;"> <!-- Línea modificada -->
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Cámaras: {{ cameras_count|default_if_none:"0" }}. Comentarios: {{ comments_count|default_if_none:"0" }}</p>
+    </footer>
+</body>
+</html>

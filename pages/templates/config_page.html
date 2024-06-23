@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <main class="config-content">
+    <h1 class="config-title spacing">Configuración</h1><!-- Añade la clase 'config-title' aquí -->
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Guardar">
+    </form>
+  </main>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <main class="content">
+
+    <h2 class="titulo-datos">Fuentes de datos</h2>
+    <ul class="descarga-lista">
+      <li><button class="boton-descarga" onclick="location.href='{% url 'download_camera_data' %}'">Descargar Listado 1</button></li>
+      <li><button class="boton-descarga" onclick="location.href='{% url 'download_camera_data_list2' %}'">Descargar Listado 2</button></li>
+    </ul>
+
+    <h2 class="titulo-datos" style="margin-top: 20px;">Listado de cámaras</h2>
+    {% for camera in page_obj %}
+      <div class="comment">
+        <p>Identificador: {{ camera.identifier }}</p>
+        <p>Nombre: {{ camera.name }}</p>
+        <p>Comentarios: {{ camera.comments_count }}</p>
+        <p>Me gustas: {{ camera.votes_count }}</p>
+        <a class="boton-camara" href="{% url 'camera_page' camera.identifier %}">Ver cámara</a>
+        <a class="boton-camara" href="{% url 'dynamic_camera_page' camera.identifier %}">Ver cámara dinámica</a>
+    </div>
+  {% endfor %}
+    {% if page_obj.has_previous %}
+      <a class="pagination-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+    {% endif %}
+    {% if page_obj.has_next %}
+      <a class="pagination-link" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+    {% endif %}
+  </main>
+{% endblock %}
